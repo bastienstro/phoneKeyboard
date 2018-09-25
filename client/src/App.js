@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
-import { PhoneButton,BackButton } from './UIComponents/Phone/Buttons'
-import { Phone,Display,List,Keyboard } from './UIComponents/Phone/Layout'
+import { Phone,Display } from './UIComponents/Phone/Layout'
+import { Keyboard } from './UIComponents/Phone/Keyboard'
 
 class App extends Component {
+	
+  constructor(props) {
+	  super(props)
+	  this.state = {
+		  input : ''
+	  }
+  }	
+  
+  addNumber = (number) => {
+	  const input = this.state.input + number
+	  this.setState({ input })
+  }
+  
+  removeNumber = () => {
+	  const input = this.state.input.slice(0, -1)
+	  this.setState({ input })
+  }
 	
   render() {
     return (
       <Phone >
-      	<Display value="test" />
-      	<List />
-      	<Keyboard>
-        <BackButton  >dsfsd</BackButton>
-        <PhoneButton number={2} letters={"abc"}>dsfsd</PhoneButton>
-        <PhoneButton number={3} letters={"def"}>dsfsd</PhoneButton>
-        <PhoneButton number={4} letters={"ghi"}>dsfsd</PhoneButton>
-        <PhoneButton number={5} letters={"jkl"}>dsfsd</PhoneButton>
-        <PhoneButton number={6} letters={"mno"}>dsfsd</PhoneButton>
-        <PhoneButton number={7} letters={"pqrs"}>dsfsd</PhoneButton>
-        <PhoneButton number={8} letters={"tuv"}>dsfsd</PhoneButton>
-         <PhoneButton number={9} letters={"wxyz"}>dsfsd</PhoneButton>
-       
-        </Keyboard>
+      	<Display value={this.state.input} />
+      	<Keyboard onBack={() => this.removeNumber()} onNumber={(number) => this.addNumber(number)}/>
       </Phone>
     );
   }

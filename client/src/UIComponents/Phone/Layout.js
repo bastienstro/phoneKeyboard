@@ -41,7 +41,7 @@ background:black;
 color:white;  
 `
 
-export const Keyboard = styled.div`
+export const PhoneBottom = styled.div`
 height:50%;flex-grow: 1;
 width:100%;
 display : flex;

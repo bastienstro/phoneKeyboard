@@ -20,17 +20,12 @@ export const Button = styled.button`
   `}
 `
 
-export const PhoneButton = ({number,letters}) => (
-	<Button>
+export const PhoneButton = ({number,letters,onClick}) => (
+	<Button onClick={onClick}>
 		<Number>{number}</Number>
 		<Letters>{letters}</Letters>
 	</Button>
 )
-
-export const BackButton = ({onBack}) => (
-	<Button primary onClick={onBack} >BACK</Button>
-)
-
 
 export const Number = styled.div`
 	font-size:20px;
