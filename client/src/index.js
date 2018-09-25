@@ -8,10 +8,11 @@ injectGlobal`
     margin: 0;
     text-align:center;
     height:100%; 
+    display:flex;
+    align-items: center;
+  justify-content: center;
   }
-  #root{
-	  height:100%;
-  }
+  
 `
 
 ReactDOM.render(<App />, document.getElementById('root'));

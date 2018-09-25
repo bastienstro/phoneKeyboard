@@ -2,21 +2,21 @@ import React from 'react';
 import styled, { css }  from 'styled-components'
 
 export const Button = styled.button`
-  /* This renders the buttons above... Edit me! */
 
   flex-grow: 1;
   width: 33%;
-  border:2px solid blue;
+  border:none;
   padding: 2rem;
-  background: white;
+  background: black;
   cursor:pointer;
-  color: blue;
+  color: white;
+  line-height:20px;
 
-  /* The GitHub button is a primary button
-   * edit this to target it specifically! */
   ${props => props.primary && css`
-    background: blue;
-    color: white;
+    background: black;
+    color: gray;
+    font-size:14px;
+    
   `}
 `
 
@@ -33,12 +33,11 @@ export const BackButton = ({onBack}) => (
 
 
 export const Number = styled.div`
-	color:blue;
 	font-size:20px;
 	text-transform:capitalize;
 `
 
 export const Letters = styled.div`
-	color:black;
-	text-transform:capitalize;
+	color:gray;
+	text-transform:uppercase;
 `

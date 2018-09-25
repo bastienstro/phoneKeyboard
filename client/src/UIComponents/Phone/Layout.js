@@ -2,32 +2,47 @@ import React from 'react';
 import styled, { css }  from 'styled-components'
 
 export const Phone = styled.div`
-  /* This renders the buttons above... Edit me! */
   margin:0 auto;
-  width:600px;
-  height:100%;
-  border:1px solid red;
+  width:300px;
+  height:600px;
+  border-radius:50px;
+  padding:20px 40px;
+  border:5px solid black;
+  background:black;
+  box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
   display:flex;
   flex-flow:column nowrap;flex-grow: 1;
 `
 
 export const Screen = styled.div`
-  /* This renders the buttons above... Edit me! */
-height:40%;
-width:100%;
-background:black;
+  height:40%;
+  width:100%;
+  background:black;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  
+  div{
+	 color:white;
+	 font-size:60px;
+  }
+
 `
+export const Display = ({value}) => (
+	<Screen>
+		<div>{value}</div>
+	</Screen>
+)
 
 export const List = styled.div`
-  /* This renders the buttons above... Edit me! */
-height:80px;
+height:10%;
 width:100%;
-background:beige;  
+background:black;
+color:white;  
 `
 
 export const Keyboard = styled.div`
-  /* This renders the buttons above... Edit me! */
-height:40%;flex-grow: 1;
+height:50%;flex-grow: 1;
 width:100%;
 display : flex;
   flex-wrap: wrap;

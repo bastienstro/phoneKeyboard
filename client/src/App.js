@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { PhoneButton,BackButton } from './UIComponents/Phone/Buttons'
-import { Phone,Screen,List,Keyboard } from './UIComponents/Phone/Layout'
+import { Phone,Display,List,Keyboard } from './UIComponents/Phone/Layout'
 
 class App extends Component {
 	
   render() {
     return (
       <Phone >
-      	<Screen />
+      	<Display value="test" />
       	<List />
       	<Keyboard>
         <BackButton  >dsfsd</BackButton>
