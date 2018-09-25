@@ -3,10 +3,11 @@ import styled, { css }  from 'styled-components'
 
 export const Button = styled.button`
   /* This renders the buttons above... Edit me! */
-  display: inline-block;
+
+  flex-grow: 1;
+  width: 33%;
   border:2px solid blue;
   padding: 2rem;
-  margin: 0.5rem 1rem;
   background: white;
   cursor:pointer;
   color: blue;
