@@ -11,7 +11,7 @@ export const Button = styled.button`
   cursor:pointer;
   color: white;
   line-height:20px;
-
+  &:focus {outline:0;}
   ${props => props.primary && css`
     background: black;
     color: gray;
