@@ -2,12 +2,9 @@ import React from 'react';
 import { PhoneButton,Button } from './Buttons'
 import {List} from './Layout'
 
-
-
-
 export const Keyboard=({onBack,onNumber}) =>{
 	
-	const phoneKeys = [
+const phoneKeys = [
 	{"number" : "2", "letters" : "abc"},
 	{"number" : "3", "letters" : "def"},
 	{"number" : "4", "letters" : "ghi"},
