@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "scripts": {
     "client": "cd client && yarn start",
-    "server": "nodemon server.js",
+    "server": "nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "dependencies": {
     "express": "^4.16.2",
-    "nodemon" : "^1.18.4"
+    "nodemon": "^1.18.4"
   },
   "devDependencies": {
-    "concurrently": "^3.5.0"
+    "concurrently": "^3.5.0",
+     "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
   }
 }
