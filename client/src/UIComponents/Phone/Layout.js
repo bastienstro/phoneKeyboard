@@ -1,5 +1,5 @@
 import React from 'react';
-import styled  from 'styled-components'
+import styled from 'styled-components'
 
 export const Phone = styled.div`
   margin:0 auto;
@@ -50,7 +50,6 @@ export const Display = ({value}) => (
 		
 	</Screen>
 )
-
 
 export const PhoneBottom = styled.div`
 height:50%;flex-grow: 1;
