@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Phone,Display } from './UIComponents/Phone/Layout'
 import { Keyboard } from './UIComponents/Phone/Keyboard'
+import { getSuggestions } from './actions'
 
 class App extends Component {
 	
@@ -12,9 +13,11 @@ class App extends Component {
 	  }
   }	
   
-  addNumber = (number) => {
+  addNumber = async (number) => {
 	  const input = this.state.input + number
-	  this.setState({ input })
+	  const suggestions = await getSuggestions(input)
+	  
+	  this.setState({ input, suggestions })
 	  
   }
   

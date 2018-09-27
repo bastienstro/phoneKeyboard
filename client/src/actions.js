@@ -1,7 +1,6 @@
 export const getSuggestions = async (query) => {
 	
-	let response = await fetch(`/api/t9/${query}`)
-	let suggestions = await response.json()
+	let suggestions = await fetch(`/api/t9/${query}`)
 	
-	return suggestions
+	return suggestions.json()
 }

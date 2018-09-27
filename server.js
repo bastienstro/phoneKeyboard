@@ -15,12 +15,15 @@ app.get('/api/t9/:query?', (req, res) => {
     "caterpilar",
     "def"
   ]
+  
+  
+  
   const query = req.params.query || ''
   if (!query.length) {
     res.send('')
   } else {
     const tree = new T9Tree(dictionnary)
-    res.send(tree.query(query));
+    res.send(JSON.stringify(tree.query(query)));
   }
   
 });
