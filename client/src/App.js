@@ -13,19 +13,26 @@ class App extends Component {
 	  }
   }	
   
-  addNumber = async (number) => {
+  addNumber = (number) => {
 	  const input = this.state.input + number
-	  /* we fetch here the suggestions based on our input number */
-	  /* we slice to 5 for UI purposes, you can see the hole result in the console */
-	  const suggestions = await getSuggestions(input).slice(0,5)
-	  console.log(suggestions)
-	  this.setState({ input, suggestions })
-	  
+	  this.updateState(input)
   }
   
   removeNumber = () => {
 	  const input = this.state.input.slice(0, -1)
-	  this.setState({ input })
+	  this.updateState(input)
+  }
+  
+  updateState = async (input) => {
+    /* we fetch here the suggestions based on our input number */
+	  /* we slice to 5 for UI purposes, you can see the hole result in the console */
+	  const suggestions = await getSuggestions(input)
+	  this.setState({ 
+  	  input, 
+  	  suggestions : suggestions.slice(0,5) 
+  	})
+	  console.log(suggestions)
+	   
   }
 	
   render() {

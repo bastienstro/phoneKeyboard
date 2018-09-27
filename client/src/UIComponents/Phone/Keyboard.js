@@ -18,7 +18,7 @@ const phoneKeys = [
 	return (
 	<div>
 	<List >
-	  {suggestions.map(suggestion => <Suggestion>{suggestion}</Suggestion>)}
+	  {suggestions.map((suggestion,index) => <Suggestion key={index}>{suggestion}</Suggestion>)}
 	</List>
 	<Button onClick={onBack} >BACK</Button>
 		{phoneKeys.map(key =>  <PhoneButton key={key.number} number={key.number} letters={key.letters} onClick={() => onNumber(key.number)} />)}
