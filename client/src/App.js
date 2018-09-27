@@ -7,13 +7,15 @@ class App extends Component {
   constructor(props) {
 	  super(props)
 	  this.state = {
-		  input : ''
+		  input : '',
+		  suggestions : []
 	  }
   }	
   
   addNumber = (number) => {
 	  const input = this.state.input + number
 	  this.setState({ input })
+	  
   }
   
   removeNumber = () => {

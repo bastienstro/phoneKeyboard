@@ -4,9 +4,9 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.get('/api/hello', (req, res) => {
+app.get('/api/t9/:query?', (req, res) => {
 	
-	  const dico = [
+	  const dictionnary = [
     "abc",
     "aba",
     "abe",
@@ -15,9 +15,14 @@ app.get('/api/hello', (req, res) => {
     "caterpilar",
     "def"
   ]
-  const t = new T9Tree(dico)
-
-  res.send(t.query('222'));
+  const query = req.params.query
+  if (!query.length) {
+    res.send('')
+  } else {
+    const tree = new T9Tree(dictionnary)
+    res.send(tree.query(query));
+  }
+  
 });
 
 app.listen(port, () => {
