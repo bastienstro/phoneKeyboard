@@ -20,6 +20,7 @@ class App extends Component {
   
   removeNumber = () => {
 	  const input = this.state.input.slice(0, -1)
+	  console.log(typeof input)
 	  this.updateState(input)
   }
   
@@ -27,6 +28,7 @@ class App extends Component {
     /* we fetch here the suggestions based on our input number */
 	  /* we slice to 5 for UI purposes, you can see the hole result in the console */
 	  const suggestions = await getSuggestions(input)
+	  console.log(suggestions)
 	  this.setState({ 
   	  input, 
   	  suggestions : suggestions.slice(0,5) 
