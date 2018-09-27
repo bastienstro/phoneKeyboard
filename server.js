@@ -15,7 +15,7 @@ app.get('/api/t9/:query?', (req, res) => {
     "caterpilar",
     "def"
   ]
-  const query = req.params.query
+  const query = req.params.query || ''
   if (!query.length) {
     res.send('')
   } else {
