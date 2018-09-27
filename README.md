@@ -25,6 +25,12 @@ build client:
   yarn build
 ```
 
+test t9tree:
+```shell
+  yarn test
+```
+
+
 # Use:
 
 This App implements T9 Predictive Text Input (node / React).
