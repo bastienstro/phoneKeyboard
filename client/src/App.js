@@ -15,8 +15,10 @@ class App extends Component {
   
   addNumber = async (number) => {
 	  const input = this.state.input + number
-	  const suggestions = await getSuggestions(input)
-	  
+	  /* we fetch here the suggestions based on our input number */
+	  /* we slice to 5 for UI purposes, you can see the hole result in the console */
+	  const suggestions = await getSuggestions(input).slice(0,5)
+	  console.log(suggestions)
 	  this.setState({ input, suggestions })
 	  
   }

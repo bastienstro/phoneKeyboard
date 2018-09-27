@@ -1,26 +1,14 @@
 import { T9Tree } from './lib/T9Tree/T9Tree'
 
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 5000;
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 5000
+const fs = require('fs')
+
 
 app.get('/api/t9/:query?', (req, res) => {
 	
-	  const dictionary = [
-    "abc",
-    "abe",
-    "aba",
-    "aab",
-    "aac",
-    "aaa",
-    "abe",
-    "cat",
-    "cot",
-    "caterpilar",
-    "def"
-  ]
-  
-  
+	const dictionary = fs.readFileSync("lib/5000-words.txt", 'utf8').split('\n');  
   
   const query = req.params.query || ''
   if (!query.length) {
@@ -30,7 +18,7 @@ app.get('/api/t9/:query?', (req, res) => {
     res.send(JSON.stringify(tree.query(query)));
   }
   
-});
+})
 
 app.listen(port, () => {
   
@@ -41,4 +29,4 @@ app.listen(port, () => {
 
 
 
-});
+})
