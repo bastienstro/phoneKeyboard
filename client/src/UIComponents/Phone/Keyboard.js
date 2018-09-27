@@ -1,8 +1,8 @@
 import React from 'react';
 import { PhoneButton,Button } from './Buttons'
-import {List} from './Layout'
+import {List,Suggestion} from './Layout'
 
-export const Keyboard=({onBack,onNumber}) =>{
+export const Keyboard=({onBack,onNumber,suggestions}) =>{
 	
 const phoneKeys = [
 	{"number" : "2", "letters" : "abc"},
@@ -17,7 +17,9 @@ const phoneKeys = [
 
 	return (
 	<div>
-	<List ></List>
+	<List >
+	  {suggestions.map(suggestion => <Suggestion>{suggestion}</Suggestion>)}
+	</List>
 	<Button onClick={onBack} >BACK</Button>
 		{phoneKeys.map(key =>  <PhoneButton key={key.number} number={key.number} letters={key.letters} onClick={() => onNumber(key.number)} />)}
     </div>

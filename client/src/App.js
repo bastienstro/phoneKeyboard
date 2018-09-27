@@ -29,8 +29,8 @@ class App extends Component {
   render() {
     return (
       <Phone >
-      	<Display value={this.state.input} />
-      	<Keyboard onBack={() => this.removeNumber()} onNumber={(number) => this.addNumber(number)}/>
+      	<Display value={this.state.input}  />
+      	<Keyboard suggestions={this.state.suggestions} onBack={() => this.removeNumber()} onNumber={(number) => this.addNumber(number)}/>
       </Phone>
     );
   }

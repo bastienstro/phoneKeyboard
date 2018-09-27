@@ -26,20 +26,31 @@ export const Screen = styled.div`
 	 color:white;
 	 font-size:60px;
   }
+`
 
+export const List = styled.ul`
+  height:10%;
+  width:100%;
+  background:black;
+  list-style-type : none;
+  color:white;  
+  text-align:center;
+  margin:0;
+  padding:0;
+`
+
+export const Suggestion = styled.li`
+  color:white; 
+  display:inline-block;
+  padding:10px; 
 `
 export const Display = ({value}) => (
 	<Screen>
 		<div>{value}</div>
+		
 	</Screen>
 )
 
-export const List = styled.div`
-height:10%;
-width:100%;
-background:black;
-color:white;  
-`
 
 export const PhoneBottom = styled.div`
 height:50%;flex-grow: 1;

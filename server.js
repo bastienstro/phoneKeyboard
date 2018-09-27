@@ -6,9 +6,13 @@ const port = process.env.PORT || 5000;
 
 app.get('/api/t9/:query?', (req, res) => {
 	
-	  const dictionnary = [
+	  const dictionary = [
     "abc",
+    "abe",
     "aba",
+    "aab",
+    "aac",
+    "aaa",
     "abe",
     "cat",
     "cot",
@@ -22,7 +26,7 @@ app.get('/api/t9/:query?', (req, res) => {
   if (!query.length) {
     res.send('')
   } else {
-    const tree = new T9Tree(dictionnary)
+    const tree = new T9Tree(dictionary)
     res.send(JSON.stringify(tree.query(query)));
   }
   
